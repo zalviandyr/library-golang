@@ -14,7 +14,7 @@ import (
 )
 
 func TestBookServiceFindAll(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 
 	authorRepo := repository.NewAuthorRepository(db)
@@ -70,7 +70,7 @@ func TestBookServiceFindAll(t *testing.T) {
 }
 
 func TestBookServiceFind(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 
 	authorRepo := repository.NewAuthorRepository(db)
@@ -120,7 +120,7 @@ func TestBookServiceFind(t *testing.T) {
 }
 
 func TestBookServiceSaveUpdate(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 
 	authorRepo := repository.NewAuthorRepository(db)
@@ -189,7 +189,7 @@ func TestBookServiceSaveUpdate(t *testing.T) {
 }
 
 func TestBookServiceSaveInvalidAuthors(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 
 	authorRepo := repository.NewAuthorRepository(db)
@@ -221,7 +221,7 @@ func TestBookServiceSaveInvalidAuthors(t *testing.T) {
 }
 
 func TestBookServiceDelete(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 
 	authorRepo := repository.NewAuthorRepository(db)

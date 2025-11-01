@@ -11,7 +11,7 @@ import (
 )
 
 func TestPublisherServiceFindAll(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewPublisherRepository(db)
 	service := service.NewPublisherService(repo)
@@ -41,7 +41,7 @@ func TestPublisherServiceFindAll(t *testing.T) {
 }
 
 func TestPublisherServiceFind(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewPublisherRepository(db)
 	service := service.NewPublisherService(repo)
@@ -66,7 +66,7 @@ func TestPublisherServiceFind(t *testing.T) {
 }
 
 func TestPublisherServiceSaveUpdateAndDelete(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewPublisherRepository(db)
 	service := service.NewPublisherService(repo)

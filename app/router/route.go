@@ -19,6 +19,12 @@ func Init(init *bootstrap.Initialization) *gin.Engine {
 	// middleware
 	router.Use(gin.CustomRecovery(middleware.ErrorMiddleware))
 
+	authController := init.AuthController
+	{
+		router.POST("/login", authController.Login)
+		router.POST("/register", authController.Register)
+	}
+
 	author := router.Group("/author")
 	authorController := init.AuthorController
 	{

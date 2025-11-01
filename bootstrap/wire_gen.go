@@ -28,7 +28,10 @@ func Initialized() *Initialization {
 	bookRepository := repository.NewBookRepository(db)
 	bookService := service.NewBookService(authorRepository, bookRepository)
 	bookController := controller.NewBookController(bookService)
-	initialization := NewInitialization(authorController, publisherController, bookController)
+	authRepository := repository.NewAuthRepository(db)
+	authService := service.NewAuthService(authRepository)
+	authController := controller.NewAuthController(authService)
+	initialization := NewInitialization(authorController, publisherController, bookController, authController)
 	return initialization
 }
 
@@ -39,3 +42,5 @@ var authorSet = wire.NewSet(controller.NewAuthorController, service.NewAuthorSer
 var publisherSet = wire.NewSet(controller.NewPublisherController, service.NewPublisherService, repository.NewPublisherRepository)
 
 var bookSet = wire.NewSet(controller.NewBookController, service.NewBookService, repository.NewBookRepository)
+
+var authSet = wire.NewSet(controller.NewAuthController, service.NewAuthService, repository.NewAuthRepository)

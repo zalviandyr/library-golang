@@ -18,6 +18,8 @@ var publisherSet = wire.NewSet(controller.NewPublisherController, service.NewPub
 
 var bookSet = wire.NewSet(controller.NewBookController, service.NewBookService, repository.NewBookRepository)
 
+var authSet = wire.NewSet(controller.NewAuthController, service.NewAuthService, repository.NewAuthRepository)
+
 func Initialized() *Initialization {
 	wire.Build(
 		NewInitialization,
@@ -27,6 +29,7 @@ func Initialized() *Initialization {
 		authorSet,
 		publisherSet,
 		bookSet,
+		authSet,
 	)
 
 	return nil

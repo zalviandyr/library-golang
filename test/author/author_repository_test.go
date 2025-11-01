@@ -14,7 +14,7 @@ import (
 )
 
 func TestAuthorRepositoryFindAll(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewAuthorRepository(db)
 
@@ -41,7 +41,7 @@ func TestAuthorRepositoryFindAll(t *testing.T) {
 }
 
 func TestAuthorRepositoryFind(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewAuthorRepository(db)
 
@@ -92,7 +92,7 @@ func TestAuthorRepositoryFind(t *testing.T) {
 }
 
 func TestAuthorRepositoryFindNotFound(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewAuthorRepository(db)
 
@@ -107,7 +107,7 @@ func TestAuthorRepositoryFindNotFound(t *testing.T) {
 }
 
 func TestAuthorRepositorySaveUpdate(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewAuthorRepository(db)
 
@@ -139,7 +139,7 @@ func TestAuthorRepositorySaveUpdate(t *testing.T) {
 }
 
 func TestAuthorRepositoryDelete(t *testing.T) {
-	env := config.InitEnvironment("../../.env.testing")
+	env := config.InitEnvironmentWithFiles("../../.env.testing")
 	db := test.InitTestingDatabase(env)
 	repo := repository.NewAuthorRepository(db)
 

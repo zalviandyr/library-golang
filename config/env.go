@@ -3,6 +3,7 @@ package config
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"strings"
 
@@ -19,13 +20,26 @@ type Environment struct {
 	DB_PASSWORD string
 }
 
-func InitEnvironment(filenames ...string) Environment {
+func InitEnvironment() Environment {
 	// file .env or system environment
-	err := godotenv.Load(filenames...)
+	err := godotenv.Load()
 	if err != nil {
 		fmt.Println("error loading .env file, so read the system env")
 	}
 
+	return read()
+}
+
+func InitEnvironmentWithFiles(filenames ...string) Environment {
+	err := godotenv.Load(filenames...)
+	if err != nil {
+		log.Fatal("file not found")
+	}
+
+	return read()
+}
+
+func read() Environment {
 	envContent, err := godotenv.Read()
 	if err != nil {
 		fmt.Println("error reading .env, so read the system env")

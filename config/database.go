@@ -29,6 +29,7 @@ func InitDatabase(env Environment) *gorm.DB {
 		&dao.Author{},
 		&dao.Publisher{},
 		&dao.Book{},
+		&dao.User{},
 	)
 
 	return db
