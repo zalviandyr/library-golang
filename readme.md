@@ -43,6 +43,16 @@ go mod download
 go run main.go
 ```
 
+## Docker
+
+Build and run the containerized binary if you prefer not to install Go locally:
+
+```bash
+docker build -t library-be .
+```
+
+The container only contains the compiled service binary, so make sure the database specified in `.env` is reachable from inside the container (e.g., use host networking or expose the database service).
+
 ## Testing
 
 1. Create `.env.testing` (copy from `.env.example` or `.env`) and point it at an isolated PostgreSQL database that tests are free to reset.
