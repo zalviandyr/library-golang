@@ -1,0 +1,614 @@
+{
+	"info": {
+		"_postman_id": "e2adea3e-dde4-40e7-af84-e8057cf5e349",
+		"name": "Library Golang",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9840862"
+	},
+	"item": [
+		{
+			"name": "Author",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/author",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/author/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"author",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ffe00e3e-3456-407d-b899-ca2c01d34d76"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Zukron\",\n    \"last_name\": \"Alviandy\",\n    \"biography\": \"Hello World\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/author",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"author"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"Zukron\",\n    \"last_name\": \"Alviandy Rahmadhan\",\n    \"biography\": \"Hello World\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/author/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"author",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0cabfefc-6729-452b-beba-456fa63b555d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/author/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"author",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ffe00e3e-3456-407d-b899-ca2c01d34d76"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publisher",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/publisher",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"publisher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/publisher/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"publisher",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "746e25d7-697e-42c5-bce4-5f9d6e984bb1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gramedia\",\n    \"phone\": \"0895123\",\n    \"address\": \"Yogyakarta\",\n    \"website\": \"https://gramedia.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/publisher",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"publisher"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tiga Serangkai\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/publisher/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"publisher",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "746e25d7-697e-42c5-bce4-5f9d6e984bb1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tiga Serangkai\"\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/publisher/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"publisher",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "a83c90a8-c593-4580-9aec-ac328a0ceb67"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/book",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/book/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"book",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4d929111-dc68-496a-af72-e9e6078ee72c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Naga Bonar\",\n    \"description\": \"Naga Bonar Bertapa di Goa Hantu\",\n    \"published_at\": \"2025-11-01T06:09:17Z\",\n    \"isbn\": \"12345\",\n    \"publisher_id\": \"746e25d7-697e-42c5-bce4-5f9d6e984bb1\",\n    \"author_ids\": [\n        \"0cabfefc-6729-452b-beba-456fa63b555d\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/book",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Naga bonar v2\",\n    \"author_ids\": [\n        \"7dbb7a48-0d73-4e4e-8260-24c49871a347\",\n        \"0cabfefc-6729-452b-beba-456fa63b555d\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/book/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"book",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4d929111-dc68-496a-af72-e9e6078ee72c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Naga bonar v2\",\n    \"author_ids\": [\n        \"7dbb7a48-0d73-4e4e-8260-24c49871a347\",\n        \"0cabfefc-6729-452b-beba-456fa63b555d\"\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseURL}}/book/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"book",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4d929111-dc68-496a-af72-e9e6078ee72c"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"heyaa\",\n    \"password\": \"12345\",\n    \"confirm_password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"heyaa\",\n    \"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
