@@ -42,3 +42,14 @@ go run seeds/main.go
 go mod download
 go run main.go
 ```
+
+## Testing
+
+1. Create `.env.testing` (copy from `.env.example` or `.env`) and point it at an isolated PostgreSQL database that tests are free to reset.
+2. Run the suite serially so that each package gets an exclusive connection:
+
+   ```bash
+   go test -p 1 ./...
+   ```
+
+   The `-p 1` flag disables parallel package execution. Each package test initializes a fresh database session and drops/migrates tables; running one at a time prevents race conditions where concurrent packages remove each other’s schema.
