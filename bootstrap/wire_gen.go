@@ -22,10 +22,15 @@ func Initialized() *Initialization {
 	authorRepository := repository.NewAuthorRepository(db)
 	authorService := service.NewAuthorService(authorRepository)
 	authorController := controller.NewAuthorController(authorService)
-	initialization := NewInitialization(authorController)
+	publisherRepository := repository.NewPublisherRepository(db)
+	publisherService := service.NewPublisherService(publisherRepository)
+	publisherController := controller.NewPublisherController(publisherService)
+	initialization := NewInitialization(authorController, publisherController)
 	return initialization
 }
 
 // injector.go:
 
 var authorSet = wire.NewSet(controller.NewAuthorController, service.NewAuthorService, repository.NewAuthorRepository)
+
+var publisherSet = wire.NewSet(controller.NewPublisherController, service.NewPublisherService, repository.NewPublisherRepository)

@@ -14,6 +14,8 @@ import (
 
 var authorSet = wire.NewSet(controller.NewAuthorController, service.NewAuthorService, repository.NewAuthorRepository)
 
+var publisherSet = wire.NewSet(controller.NewPublisherController, service.NewPublisherService, repository.NewPublisherRepository)
+
 func Initialized() *Initialization {
 	wire.Build(
 		NewInitialization,
@@ -21,6 +23,7 @@ func Initialized() *Initialization {
 		config.InitEnvironment,
 
 		authorSet,
+		publisherSet,
 	)
 
 	return nil

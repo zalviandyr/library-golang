@@ -29,5 +29,15 @@ func Init(init *bootstrap.Initialization) *gin.Engine {
 		author.DELETE("/:id", authorController.Delete)
 	}
 
+	publisher := router.Group("/publisher")
+	publisherController := init.PublisherController
+	{
+		publisher.GET("/", publisherController.Index)
+		publisher.GET("/:id", publisherController.Show)
+		publisher.POST("/", publisherController.Create)
+		publisher.PUT("/:id", publisherController.Update)
+		publisher.DELETE("/:id", publisherController.Delete)
+	}
+
 	return router
 }
