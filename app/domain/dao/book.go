@@ -15,7 +15,7 @@ type Book struct {
 	PublishedAt time.Time `gorm:"not null" json:"published_at"`
 
 	PublisherID *uuid.UUID `gorm:"not null;index" json:"publisher_id"`
-	Publisher   Publisher  `gorm:"constraint:OnUpdate:CASCADE,OnDelete:RESTRICT" json:"publisher"`
+	Publisher   *Publisher `gorm:"constraint:OnUpdate:CASCADE,OnDelete:RESTRICT" json:"publisher"`
 
 	Author []Author `gorm:"many2many:author_books;constraint:OnDelete:CASCADE,OnDelete:CASCADE" json:"authors"`
 }

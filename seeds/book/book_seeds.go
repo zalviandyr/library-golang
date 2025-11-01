@@ -33,7 +33,7 @@ func BookSeeds(db *gorm.DB, count int) {
 
 	books := make([]dao.Book, count)
 	for i := range books {
-		selectedPublisher := publishers[rand.Intn(len(publishers))]
+		selectedPublisher := &publishers[rand.Intn(len(publishers))]
 		selectedAuthor := getSelectedAuthors(authors)
 
 		books[i] = dao.Book{
