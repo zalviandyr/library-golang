@@ -27,11 +27,14 @@ func (cont *AuthController) Login(c *gin.Context) {
 		panic(*err)
 	}
 
-	if err := cont.service.Login(login); err != nil {
+	token, err := cont.service.Login(login)
+	if err != nil {
 		panic(pkg.BadRequestError{Message: err.Error()})
 	}
 
-	c.JSON(pkg.NewResponse(http.StatusOK, "Success login").Build())
+	c.JSON(pkg.NewResponse(http.StatusOK, "Success login").Body(gin.H{
+		"token": token,
+	}).Build())
 }
 
 func (cont *AuthController) Register(c *gin.Context) {

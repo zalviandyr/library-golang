@@ -19,13 +19,17 @@ func Init(init *bootstrap.Initialization) *gin.Engine {
 	// middleware
 	router.Use(gin.CustomRecovery(middleware.ErrorMiddleware))
 
+	// auth
 	authController := init.AuthController
 	{
 		router.POST("/login", authController.Login)
 		router.POST("/register", authController.Register)
 	}
 
-	author := router.Group("/author")
+	// protected
+	authMiddleware := middleware.AuthMiddleware(init.Env.JWT_SECRET)
+	protected := router.Group("/", authMiddleware)
+	author := protected.Group("/author")
 	authorController := init.AuthorController
 	{
 		author.GET("/", authorController.Index)
@@ -35,7 +39,7 @@ func Init(init *bootstrap.Initialization) *gin.Engine {
 		author.DELETE("/:id", authorController.Delete)
 	}
 
-	publisher := router.Group("/publisher")
+	publisher := protected.Group("/publisher")
 	publisherController := init.PublisherController
 	{
 		publisher.GET("/", publisherController.Index)
@@ -45,7 +49,7 @@ func Init(init *bootstrap.Initialization) *gin.Engine {
 		publisher.DELETE("/:id", publisherController.Delete)
 	}
 
-	book := router.Group("/book")
+	book := protected.Group("/book")
 	bookController := init.BookController
 	{
 		book.GET("/", bookController.Index)

@@ -18,6 +18,8 @@ type Environment struct {
 	DB_DATABASE string
 	DB_USER     string
 	DB_PASSWORD string
+
+	JWT_SECRET string
 }
 
 func InitEnvironment() Environment {

@@ -29,9 +29,9 @@ func Initialized() *Initialization {
 	bookService := service.NewBookService(authorRepository, bookRepository)
 	bookController := controller.NewBookController(bookService)
 	authRepository := repository.NewAuthRepository(db)
-	authService := service.NewAuthService(authRepository)
+	authService := service.NewAuthService(authRepository, environment)
 	authController := controller.NewAuthController(authService)
-	initialization := NewInitialization(authorController, publisherController, bookController, authController)
+	initialization := NewInitialization(authorController, publisherController, bookController, authController, environment)
 	return initialization
 }
 
