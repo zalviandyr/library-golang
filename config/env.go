@@ -10,23 +10,18 @@ import (
 )
 
 type Environment struct {
-	PORT              string
-	DB_HOST           string
-	DB_PORT           string
-	DB_DATABASE       string
-	DB_USER           string
-	DB_PASSWORD       string
-	STORAGE_DRIVER    string
-	MINIO_ENDPOINT    string
-	MINIO_SERVER_HOST string
-	MINIO_BUCKET      string
-	MINIO_ACCESS_KEY  string
-	MINIO_SECRET_KEY  string
+	PORT string
+
+	DB_HOST     string
+	DB_PORT     string
+	DB_DATABASE string
+	DB_USER     string
+	DB_PASSWORD string
 }
 
-func InitEnvironment() Environment {
+func InitEnvironment(filenames ...string) Environment {
 	// file .env or system environment
-	err := godotenv.Load()
+	err := godotenv.Load(filenames...)
 	if err != nil {
 		fmt.Println("error loading .env file, so read the system env")
 	}
