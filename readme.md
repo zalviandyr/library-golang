@@ -42,5 +42,3 @@ go run seeds/main.go
 go mod download
 go run main.go
 ```
-
-`main.go` currently initialises configuration and the database; extend it with API handlers or CLI commands as the project evolves.
